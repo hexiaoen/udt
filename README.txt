@@ -9,6 +9,12 @@ UDT version 4 is free software under BSD License. See ./LICENSE.txt.
 
 ============================================================================
 
+在UDT4.11的基础 上做如下修改：
+     解决epoll无法检测到对端断开的消息,通过在epoll_wait中增加errfd
+     解决在SOCK_DGRAM模式下，没有数据可读epoll_wait也会不断返回的问题
+     修改在交会模式下，connect连接超时时间为3S
+     修改心跳间隔在正常情况下为5s钟一次，当出现上次心跳包丢包时，心跳间隔为1s。
+
 UDT Website:
 http://udt.sf.net
 http://sf.net/projects/udt/ 
